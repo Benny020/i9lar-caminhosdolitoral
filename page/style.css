@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@500&display=swap&effect=3d-float');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body
+{
+    background-color: #457f5c6c;
+}
+.font-effect-3d-float /*title*/
+{
+    font-size: 3em;
+    margin-top: 15px;
+    text-align: center;
+}
+.container /*video*/
+{
+    max-width: 100%;
+    height: 610px;
+    margin-top: 25px;
+    display: inline-flex;
+}
+.container .div-video
+{
+    width: 32%;
+    padding-top: 30%;
+    position: relative;
+    margin-left: 90px;
+}
+.div-video video
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+}
+p /*text*/
+{
+    width: 47%;
+    margin-left: 90px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+a /*button*/
+{
+    margin-left: 30px;
+    width: 70%;
+    margin-top: 60px;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.027);
+    transition: 2s;
+    overflow: hidden;
+    border-radius: 15px;
+    text-decoration: none;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0004);
+}
+a:hover
+{
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr),
+                0 0 30px var(--clr),
+                0 0 50px var(--clr),
+                0 0 80px var(--clr);
+}
+a::before
+{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 500%;
+    background: var(--clr);
+    transition: 2s;
+    animation: animate 2s linear infinite;
+    animation-delay: calc(0.33s * var(--i));
+}
+a:hover::before
+{
+    width: 120%;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+a::after
+{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background: #b6a83c;border-radius: 15px;
+}
+a:hover::after
+{
+    background: var(--clr);
+}
+a span
+{
+    position: relative;
+    z-index: 1;
+    font-size: 2em;
+    color: #fff;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: 0.5s;
+}
+a:hover span
+{
+    opacity: 0.8;
+}
+
+@media (max-width: 991px)
+{
+    .font-effect-3d-float
+    {
+        font-size: 2em;
+        
+    }
+    .container
+    {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 400px;
+        max-width: 400px;
+    }
+    .container .div-video
+    {
+        width: 80%;
+        padding-top: 100%;
+        margin-right: 90px;
+    }
+    p
+    {
+        width: 86%;
+        margin-top: 30px;
+        margin-right: 75px;
+    }
+    a
+    {
+        width: 105%;
+        margin-left: -15px;
+        bottom: 30px;
+        position: -webkit-sticky;
+        position: sticky;
+    }
+    a span
+    {
+        font-size: 1em;
+    }
+    a:hover
+    {
+        background: #b6a83c;
+        box-shadow: 0 0 10px #b6a83c,
+                0 0 30px #b6a83c,
+                0 0 50px #b6a83c,
+                0 0 80px #b6a83c;
+    }
+    a::before
+    {
+        background: #b6a83c;
+    }
+    a::after
+    {
+        background: #1e7714;
+    }
+    a:hover::after
+    {
+        background: #b6a83c;
+    }
+}
